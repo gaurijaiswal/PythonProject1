@@ -1,16 +1,23 @@
-# Input voltage and resistance
-V = float(input("Enter Voltage (V): "))
-R = float(input("Enter Resistance (R): "))
+# Input values
+h = int(input("Enter hardness: "))
+c = float(input("Enter carbon content: "))
+t = int(input("Enter tensile strength: "))
 
-# Calculate current
-I = V / R
+# Check grade
+if h > 50 and c < 0.7 and t > 5600:
+    print("Grade is 10")
 
-print("Current =", I)
+elif h > 50 and c < 0.7:
+    print("Grade is 9")
 
-# Check nature of current
-if I < 0.5:
-    print("Low current")
-elif I <= 2:
-    print("Normal current")
+elif c < 0.7 and t > 5600:
+    print("Grade is 8")
+
+elif h > 50 and t > 5600:
+    print("Grade is 7")
+
+elif h > 50 or c < 0.7 or t > 5600:
+    print("Grade is 6")
+
 else:
-    print("High current")
+    print("Grade is 5")
